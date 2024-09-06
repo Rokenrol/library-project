@@ -15,6 +15,19 @@ addNewBookButton.addEventListener('click', () => {
   createForm();
 });
 
+// Add new book button styles
+
+addNewBookButton.style.width = "200px";
+addNewBookButton.style.height = "50px";
+addNewBookButton.style.marginBottom = "20px";
+addNewBookButton.style.fontWeight = "bold";
+addNewBookButton.style.fontSize= "1.1rem";
+addNewBookButton.style.backgroundColor = "whitesmoke";
+addNewBookButton.style.color = "deepskyblue";
+addNewBookButton.style.textShadow = "1px 1px orange"
+addNewBookButton.style.border = "2px dashed orange";
+addNewBookButton.style.borderRadius = "10px";
+
 /**** Book constructor function ****/
 
 function Book(title, releaseDate, author, pages, status) {
@@ -44,7 +57,7 @@ const wrapper = document.querySelector('.wrapper');
    wrapper.style.alignItems = "start";
    wrapper.style.gap = "10px";
 
-   
+
 /*********** FUNCTIONS ************/
 
 function addBookToLibrary() {
@@ -272,3 +285,5 @@ bookCheckbox.children[1].addEventListener('change', (e) => {
 });
 
 } // --> closing brace of createForm function
+
+addBookToLibrary();
