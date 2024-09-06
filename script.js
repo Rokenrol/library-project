@@ -24,3 +24,13 @@ function Book(title, releaseDate, author, pages, status) {
   this.pages = pages;
   this.status = status;
 }
+
+/**** isBookRead method that changes the read/unread status ****/
+
+Book.prototype.isBookRead = function(checkbox) {
+  if (checkbox.checked) {
+ checkbox.value = "read";
+} else {
+checkbox.value = "not read";
+}
+};
