@@ -138,7 +138,7 @@ function createButton(buttonText) {
 }
 
  function createCheckbox() {
-   const checkboxDivWrapper = document.createElement('div');
+  const checkboxDivWrapper = document.createElement('div');
   const bookReadCheckLabel = document.createElement('label');
   bookReadCheckLabel.innerText = "READ";
   const bookReadCheck = document.createElement('input');
@@ -229,6 +229,12 @@ function createForm() {
   addButton.setAttribute("type", "button");
   addButton.innerText = "ADD";
   addButton.classList.add('add-button');
+  addButton.style.fontWeight = "bold";
+  addButton.style.marginBottom = "8px";
+  addButton.style.marginTop = "15px";
+  addButton.style.backgroundColor = "orange";
+  addButton.style.border = "2px solid red";
+  addButton.style.borderRadius = "8px";
   
   // Close button
   
@@ -236,6 +242,8 @@ function createForm() {
   closeButton.setAttribute("type", "button");
   closeButton.innerText = "CLOSE";
   closeButton.classList.add('close-button');
+  closeButton.style.border = "1px solid black";
+  closeButton.style.borderRadius = "8px";
 
   // Append all the elements to construct the form
   
@@ -245,6 +253,8 @@ function createForm() {
   form.append(releaseDateLabel, inputReleaseDate);
   form.append(bookCheckbox);
   form.append(addButton, closeButton);
+  form.style.display = "flex";
+  form.style.flexDirection = "column";
   dialog.append(form);
   document.body.append(dialog);
   dialog.showModal();
