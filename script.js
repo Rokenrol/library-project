@@ -182,6 +182,7 @@ function createForm() {
   inputTitle.setAttribute("type", "text");
   inputTitle.setAttribute("name", "title");
   inputTitle.setAttribute("placeholder", "Title");
+  inputTitle.style.marginBottom = "8px";
   
   // Author label and input
   
@@ -194,6 +195,7 @@ function createForm() {
   inputAuthor.setAttribute("type", "text");
   inputAuthor.setAttribute("name", "author");
   inputAuthor.setAttribute("placeholder", "Author");
+  inputAuthor.style.marginBottom = "8px";
   
   // Pages label and input
   
@@ -206,6 +208,7 @@ function createForm() {
   inputPages.setAttribute("type", "text");
   inputPages.setAttribute("name", "pages");
   inputPages.setAttribute("placeholder", "Pages");
+  inputPages.style.marginBottom = "8px";
   
   // Release date label and input
   
@@ -214,11 +217,13 @@ function createForm() {
   releaseDateLabel.setAttribute("for", "inputReleaseDate");
   
   const inputReleaseDate = document.createElement("input");
+  inputReleaseDate.style.marginBottom = "12px";
   inputReleaseDate.setAttribute("id", "inputReleaseDate");
   inputReleaseDate.setAttribute("type", "text");
   inputReleaseDate.setAttribute("name", "release date");
   inputReleaseDate.setAttribute("placeholder", "Release date");
-  
+  inputReleaseDate.style.marginBottom = "8px";
+
   // Checkbox
   
  const bookCheckbox = createCheckbox();
@@ -231,7 +236,8 @@ function createForm() {
   addButton.classList.add('add-button');
   addButton.style.fontWeight = "bold";
   addButton.style.marginBottom = "8px";
-  addButton.style.marginTop = "15px";
+  addButton.style.marginTop = "12px";
+  addButton.style.color = "ivory";
   addButton.style.backgroundColor = "orange";
   addButton.style.border = "2px solid red";
   addButton.style.borderRadius = "8px";
