@@ -209,3 +209,15 @@ addButton.addEventListener('click', (event) => {
   dialog.close();
   dialog.remove();
 });
+
+// Add event listener to "READ" checkbox in the dialog box
+
+bookCheckbox.children[1].addEventListener('change', (e) => {
+  if (bookCheckbox.children[1].checked) {
+      bookCheckbox.children[1].value = "read";
+ } else {
+   bookCheckbox.children[1].value = "not read";
+ }
+});
+
+} // --> closing brace of createForm function
