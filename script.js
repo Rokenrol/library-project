@@ -44,6 +44,57 @@ const wrapper = document.querySelector('.wrapper');
    wrapper.style.alignItems = "start";
    wrapper.style.gap = "10px";
 
+   
+/*********** FUNCTIONS ************/
+
+function addBookToLibrary() {
+  // Clear all books before rendering a new page of books
+    removeChildren(wrapper);
+  for (const bookObject of myLibrary) {
+
+// Create book card
+    const div = createCard();    
+// Set data-attribute to array index
+  div.setAttribute('data-index', `${myLibrary.indexOf(bookObject)}`);
+ // Fill card with object data
+  for (let [key, value] of Object.entries(bookObject)) {
+ div.append(createKeyValuePairParagraph(`${key}: ${value}`));
+  }
+  // Data-attribute used in the delButton event listener to identify card for deletion
+  const data = div.dataset.index;
+  // Construct delete button and append it to the book card   
+  const delButton = createButton("delete");
+  // Create checkbox
+      const checkbox = createCheckbox();
+  
+ // Grab last paragraph to change the read status in the DOM
+    let readStatusParagraph = div.querySelector('div > p:last-child');
+  // Check if book status was "read" to match the checkbox state to read status 
+    if (readStatusParagraph.innerText.includes("status: read")) {
+     checkbox.children[1].checked = true;
+     }
+    
+    // Add event listener to checkbox on book card and call the prototype method
+    checkbox.children[1].addEventListener('change', (e) => {
+      bookObject.isBookRead(checkbox.children[1]);
+      console.log(checkbox.children[1].value);
+      readStatusParagraph.innerText = `status: ${checkbox.children[1].value}`;
+  });
+    
+    div.append(checkbox, delButton);
+
+ // Add event listener to delete button to remove the book card
+ delButton.addEventListener('click', () => {
+  removeCard(data, myLibrary, div);
+  addBookToLibrary();
+});
+  // Append book card to wrapper div
+  wrapper.append(div);
+ };
+
+}// --> closing brace of addBookToLibrary function
+
+
    /**** Functions for creating various elements ****/
 
 function createCard() {
