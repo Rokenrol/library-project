@@ -34,3 +34,12 @@ Book.prototype.isBookRead = function(checkbox) {
 checkbox.value = "not read";
 }
 };
+
+/**** Wrapper div for displaying book cards ****/
+
+const wrapper = document.querySelector('.wrapper');
+   wrapper.style.display = "grid";
+   wrapper.style.gridTemplateColumns = "repeat(auto-fit, 220px)";
+   wrapper.style.gridTemplateRows = "repeat(auto, min-content)";
+   wrapper.style.alignItems = "start";
+   wrapper.style.gap = "10px";
