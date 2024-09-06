@@ -196,3 +196,16 @@ function createForm() {
     inputs.forEach((input) => input.value = "");
     dialog.remove();
   });
+
+  /**** Button "ADD" in dialog box - creates new book object, pushes the object into the myLibrary array,
+and calls addBookToLibrary ****/
+
+addButton.addEventListener('click', (event) => {
+
+  const book = new Book(inputTitle.value, inputReleaseDate.value, inputAuthor.value, inputPages.value, bookCheckbox.children[1].value);
+
+  myLibrary.push(book);
+  addBookToLibrary();
+  dialog.close();
+  dialog.remove();
+});
