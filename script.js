@@ -28,25 +28,45 @@ addNewBookButton.style.textShadow = "1px 1px orange"
 addNewBookButton.style.border = "2px dashed orange";
 addNewBookButton.style.borderRadius = "10px";
 
-/**** Book constructor function ****/
+/**** Book Class ****/
 
-function Book(title, releaseDate, author, pages, status) {
+class Book {
+  constructor(title, releaseDate, author, pages, status) {
   this.title = title;
   this.releaseDate = releaseDate;
   this.author = author;
   this.pages = pages;
   this.status = status;
+  }
+
+  isBookRead(checkbox) {
+    if (checkbox.checked) {
+    checkbox.value = "read";
+    this.status = "read";
+    } else {
+    checkbox.value = "not read";
+    this.status = "not read";
+    }
+  }
 }
 
-/**** isBookRead method that changes the read/unread status ****/
+// function Book(title, releaseDate, author, pages, status) {
+//   this.title = title;
+//   this.releaseDate = releaseDate;
+//   this.author = author;
+//   this.pages = pages;
+//   this.status = status;
+// }
 
-Book.prototype.isBookRead = function(checkbox) {
-  if (checkbox.checked) {
- checkbox.value = "read";
-} else {
-checkbox.value = "not read";
-}
-};
+// /**** isBookRead method that changes the read/unread status ****/
+
+// Book.prototype.isBookRead = function(checkbox) {
+//   if (checkbox.checked) {
+//  checkbox.value = "read";
+// } else {
+// checkbox.value = "not read";
+// }
+// };
 
 /**** Wrapper div for displaying book cards ****/
 
